@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Crop Recommendation - AgroSmart</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: url('sample3.jpg') no-repeat center center/cover;
+    min-height:100vh;
+    color:white;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 5%;
+}
+
+.logo{
+    font-size:28px;
+    color:orange;
+    font-weight:bold;
+}
+
+.menu a{
+    margin:0 15px;
+    text-decoration:none;
+    color:white;
+}
+
+.menu a:hover{
+    color:#00ffcc;
+}
+
+/* MAIN */
+.main{
+    display:flex;
+    justify-content:center;
+    padding:40px;
+}
+
+/* FORM CARD */
+.card{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding:25px;
+    border-radius:15px;
+    width:320px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+.card h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#00ffcc;
+}
+
+/* INPUT */
+.card label{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+}
+
+.card select,
+.card input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:none;
+    border-radius:5px;
+    outline:none;
+}
+
+/* BUTTON */
+.card button{
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background: linear-gradient(45deg, #00ffcc, #00cc99);
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* RESULT */
+.result{
+    margin-top:20px;
+    text-align:center;
+    font-size:16px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">AgroSmart</div>
+
+    <div class="menu">
+        <a href="index.html">Home</a>
+        
+    </div>
+</div>
+
+<div class="main">
+
+<div class="card">
+    <h2>Crop Selection</h2>
+
+    <label>Soil Type</label>
+    <select id="soil">
+        <option value="" disabled selected>---Select soil---</option>
+        <option>Black Soil</option>
+        <option>Red Soil</option>
+        <option>Sandy Soil</option>
+    </select>
+
+    <label>Season</label>
+    <select id="season">
+      <option value="" disabled selected>---Select Soil Type---</option>
+        <option>Kharif</option>
+        <option>Rabi</option>
+        <option>Summer</option>
+    </select>
+
+    <label>Water Availability</label>
+    <select id="water">
+      <option value="" disabled selected>---Select Water Availability---</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+    </select>
+
+    <label>Land Size</label>
+    <select id="land">
+      <option value="" disabled selected>---Select Land Size---</option>
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+    </select>
+
+    <label>Irrigation Type</label>
+    <select id="irrigation">
+      <option value="" disabled selected>---Select Irrigation Type---</option>
+        <option>Rain-fed</option>
+        <option>Well</option>
+        <option>Canal</option>
+        <option>Drip Irrigation</option>
+    </select>
+
+    <label>Temperature (°C)</label>
+    <input type="number" id="temp">
+
+    <label>Fertilizer Type</label>
+    <select id="fertilizer">
+      <option value="" disabled selected>---Select Fertilizer---</option>
+        <option>Organic</option>
+        <option>Chemical</option>
+        <option>Mixed</option>
+    </select>
+
+    <button onclick="getResult()">Get Suggestion</button>
+
+    <div class="result" id="result"></div>
+    <h3 id="output"></h3>
+
+<!-- ADD HERE -->
+<a href="details.html">
+    <button>Detailed Analysis</button>
+</a>
+</div>
+
+</div>
+<script>
+function getResult(){
+
+let soil = document.getElementById("soil").value;
+let season = document.getElementById("season").value;
+let water = document.getElementById("water").value;
+let land = document.getElementById("land").value;
+let irrigation = document.getElementById("irrigation").value;
+let temp = parseInt(document.getElementById("temp").value);
+let fertilizer = document.getElementById("fertilizer").value;
+
+let crops = [
+{name:"Cotton", score:0},
+{name:"Rice", score:0},
+{name:"Wheat", score:0},
+{name:"Bajra", score:0},
+{name:"Maize", score:0},
+{name:"Onion", score:0},
+{name:"Potato", score:0},
+{name:"Tomato", score:0},
+{name:"Groundnut", score:0},
+{name:"Gram", score:0}
+];
+
+// 🌱 SOIL
+if(soil==="Black Soil"){ crops[0].score+=2; crops[2].score+=1; }
+if(soil==="Red Soil"){ crops[8].score+=2; crops[4].score+=1; }
+if(soil==="Sandy Soil"){ crops[3].score+=2; }
+
+// 🌦️ SEASON
+if(season==="Kharif"){
+    crops[1].score+=2; // rice
+    crops[0].score+=1; // cotton
+    crops[4].score+=1; // maize
+}
+if(season==="Rabi"){
+    crops[2].score+=2; // wheat
+    crops[9].score+=1; // gram
+    crops[6].score+=1; // potato
+}
+if(season==="Summer"){
+    crops[5].score+=1; // onion
+    crops[7].score+=1; // tomato
+}
+
+// 💧 WATER
+if(water==="High"){ crops[1].score+=2; }
+if(water==="Medium"){ crops[4].score+=1; crops[2].score+=1; }
+if(water==="Low"){ crops[3].score+=2; }
+
+// 🚜 LAND
+if(land==="Small"){
+    crops[5].score+=1;
+    crops[7].score+=1;
+}
+if(land==="Large"){
+    crops[0].score+=1;
+    crops[1].score+=1;
+}
+
+// 💦 IRRIGATION
+if(irrigation==="Drip Irrigation"){
+    crops[5].score+=2;
+    crops[7].score+=2;
+}
+if(irrigation==="Canal"){
+    crops[1].score+=1;
+}
+
+// 🌡️ TEMPERATURE
+if(temp>=20 && temp<=30){
+    crops[0].score+=1;
+    crops[4].score+=1;
+}
+if(temp>=25 && temp<=35){
+    crops[1].score+=1;
+    crops[5].score+=1;
+}
+
+// 🌿 FERTILIZER
+if(fertilizer==="Organic"){
+    crops[5].score+=1;
+    crops[7].score+=1;
+}
+if(fertilizer==="Chemical"){
+    crops[1].score+=1;
+}
+
+// SORT
+crops.sort((a,b)=>b.score-a.score);
+
+// OUTPUT
+let output = "🌱 Best Crop: " + crops[0].name + " (" + crops[0].score + " pts)<br><br>";
+
+output += "Other Suitable Crops:<br>";
+
+for(let i=1;i<4;i++){
+    output += crops[i].name + " (" + crops[i].score + " pts)<br>";
+}
+
+document.getElementById("result").innerHTML = output;
+
+}
+</script>
+

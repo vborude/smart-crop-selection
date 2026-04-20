@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - AgroSmart</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: url('sample3.jpg') no-repeat center center/cover;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+/* GLASS CARD */
+.container{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding:30px;
+    border-radius:20px;
+    width:350px;
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+/* TITLE */
+.container h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#00ffcc;
+}
+
+/* INPUT */
+.container input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+/* BUTTON */
+.container button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background: linear-gradient(45deg,#00ffcc,#00cc99);
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+/* LINK */
+.container p{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+.container a{
+    color:#00ffcc;
+    text-decoration:none;
+}
+
+.container a:hover{
+    text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Create Account</h2>
+
+    <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="index.html">Login</a></p>
+
+</div>
+
+</body>
+</html>

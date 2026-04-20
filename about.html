@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>About - AgroSmart</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+    background: url('sample3.jpg') no-repeat center center/cover;
+    min-height:100vh;
+    color:white;
+}
+
+
+/* NAV */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 5%;
+}
+.logo{
+    font-size:28px;
+    color:orange;
+    font-weight:bold;
+}
+.menu a{
+    color:white;
+    text-decoration:none;
+}
+
+/* MAIN */
+.main{
+    display:flex;
+    justify-content:center;
+    padding:50px 20px;
+}
+
+.container{
+    max-width:700px;
+    width:100%;
+}
+
+/* CARD */
+.card{
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px rgba(0,255,200,0.5);
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#00ffcc;
+    text-align:center;
+}
+
+.card p{
+    line-height:1.6;
+    margin-bottom:10px;
+}
+
+.card li{
+    margin:8px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">AgroSmart</div>
+    <div class="menu">
+        <a href="index.html">Home</a>
+    </div>
+</div>
+
+<div class="main">
+<div class="container">
+
+<div class="card">
+    <h2>About AgroSmart</h2>
+    <p>
+        AgroSmart is a smart crop recommendation system that helps users 
+        choose suitable crops based on environmental conditions.
+    </p>
+    <p>
+        It uses inputs like soil, temperature, water availability, irrigation 
+        and fertilizer to generate accurate suggestions.
+    </p>
+    <p>
+        The system simplifies farming decisions using simple web technology.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Key Features</h2>
+    <ul>
+        <li>🌾 Smart crop recommendation</li>
+        <li>🌦️ Weather integration</li>
+        <li>💰 Market price access</li>
+        <li>🌱 Soil-based analysis</li>
+        <li>📱 User-friendly interface</li>
+    </ul>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>

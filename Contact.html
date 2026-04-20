@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Contact - AgroSmart</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+    background: url('sample3.jpg') no-repeat center center/cover;
+    min-height:100vh;
+    color:white;
+}
+
+/* NAV */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 5%;
+}
+.logo{
+    font-size:28px;
+    color:#00ffcc;
+    font-weight:bold;
+}
+.menu a{
+    color:white;
+    text-decoration:none;
+}
+
+/* MAIN */
+.main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+/* CARD */
+.card{
+    width:320px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(0,255,200,0.5);
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#00ffcc;
+}
+
+.card p{
+    margin:10px 0;
+}
+
+.card button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:25px;
+    background: linear-gradient(45deg,#00ffcc,#00cc99);
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">AgroSmart</div>
+    <div class="menu">
+        <a href="index.html">Home</a>
+    </div>
+</div>
+
+<div class="main">
+
+<div class="card">
+    <h2>Contact Us</h2>
+
+    <p>📧 Email: support@agrosmart.com</p>
+    <p>📞 Toll-Free: 1800-123-456</p>
+    <p>🕒 Time: 9 AM - 6 PM</p>
+
+    <button onclick="location.href='index.html'">Back Home</button>
+</div>
+
+</div>
+
+</body>
+</html>

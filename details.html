@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Crop Details - AgroSmart</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: url("sample3.jpg") no-repeat center/cover;
+    margin: 0;
+    color: white;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #00e5c3;
+}
+
+.container {
+    padding: 15px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.1);
+    margin: 12px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* HEADER */
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+.card img {
+    width: 120px;
+    height: 85px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin-left: 15px;
+    color: #a5d6a7;
+}
+
+/* DETAILS */
+.details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.card.active .details {
+    max-height: 800px;
+    padding: 15px;
+}
+
+/* ARROW */
+.arrow {
+    margin-left: auto;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.card.active .arrow {
+    transform: rotate(180deg);
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌾 Smart Crop Details</h1>
+
+<div class="container">
+
+<!-- COTTON -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="cotton.jpeg">
+<h3>Cotton</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Cash Crop<br>
+<b>Soil:</b> Black soil<br>
+<b>Season:</b> Kharif<br>
+<b>Temp:</b> 21–30°C<br>
+<b>Rainfall:</b> 50–100 cm<br>
+<b>Yield:</b> 15–20 q/ha<br><br>
+<b>Type:</b> Cash Crop<br>
+<b>Soil:</b> Deep black (Regur), well-drained<br>
+<b>Season:</b> Kharif<br>
+<b>Temperature:</b> 21–30°C<br>
+<b>Rainfall:</b> 50–100 cm<br>
+<b>Sowing:</b> June–July<br>
+<b>Harvest:</b> Oct–Jan<br>
+<b>Yield:</b> 15–20 q/ha<br><br>
+
+<b>Overview:</b><br>
+Cotton is one of the most important commercial crops used in the textile industry. It requires a long frost-free period, bright sunshine, and moderate rainfall. Black soil helps retain moisture which supports uniform plant growth.<br><br>
+
+<b>Growth Requirements:</b><br>
+• Requires warm climate and high sunlight<br>
+• Needs well-drained soil to avoid root damage<br>
+• Moderate irrigation is necessary during flowering stage<br><br>
+
+<b>Uses:</b><br>
+• Textile fiber production<br>
+• Cottonseed oil<br>
+• Industrial raw material<br><br>
+
+<b>Advantages:</b><br>
+• High market demand<br>
+• Suitable for large-scale farming<br><br>
+
+<b>Precautions:</b><br>
+• Avoid waterlogging<br>
+• Protect from bollworm and pests<br>
+• Use drip irrigation for better efficiency.<br>
+
+</div>
+</div>
+
+<!-- WHEAT -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="wheat.jpeg">
+<h3>Wheat</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Food Crop<br>
+<b>Season:</b> Rabi<br>
+<b>Temp:</b> 10–25°C<br><b>Type:</b> Food Crop<br>
+<b>Soil:</b> Fertile loamy soil<br>
+<b>Season:</b> Rabi<br>
+<b>Temperature:</b> 10–25°C<br>
+<b>Sowing:</b> Oct–Nov<br>
+<b>Harvest:</b> Mar–Apr<br>
+<b>Yield:</b> 25–30 q/ha<br><br>
+
+<b>Overview:</b><br>
+Wheat is a staple food crop widely consumed in India. It requires cool climate during growth and warm conditions during harvesting. It is used to produce flour for bread and chapati.<br><br>
+
+<b>Growth Requirements:</b><br>
+• Cool temperature during early stages<br>
+• Moderate irrigation required<br>
+• Needs fertile soil for high yield<br><br>
+
+<b>Uses:</b><br>
+• Flour production<br>
+• Bakery products<br><br>
+
+<b>Advantages:</b><br>
+• High productivity<br>
+• Essential food crop<br><br>
+
+<b>Precautions:</b><br>
+• Avoid excessive irrigation<br>
+• Protect from fungal diseases like rust
+
+</div>
+</div>
+
+<!-- RICE -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="rice.jpeg">
+<h3>Rice</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Water:</b> High<br>
+<b>Season:</b> Kharif<br><br>
+<b>Type:</b> Food Crop<br>
+<b>Soil:</b> Clayey soil (water retaining)<br>
+<b>Season:</b> Kharif<br>
+<b>Temperature:</b> 20–35°C<br>
+<b>Rainfall:</b> 100–200 cm<br>
+<b>Sowing:</b> June–July<br>
+<b>Harvest:</b> Nov–Dec<br>
+<b>Yield:</b> 20–25 q/ha<br><br>
+
+<b>Overview:</b><br>
+Rice is the primary food crop for a large population. It requires standing water and high humidity for proper growth.<br><br>
+
+<b>Growth Requirements:</b><br>
+• Continuous water supply<br>
+• High humidity environment<br>
+• Warm climate<br><br>
+
+<b>Uses:</b><br>
+• Staple food<br>
+• Processed rice products<br><br>
+
+<b>Advantages:</b><br>
+• High demand<br>
+• Widely cultivated<br><br>
+
+<b>Precautions:</b><br>
+• Maintain water level<br>
+• Avoid nutrient deficiency
+</div>
+</div>
+
+<!-- JOWAR -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="jowar.webp">
+<h3>Jowar</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Cereal Crop<br>
+<b>Soil:</b> Black soil<br>
+<b>Season:</b> Kharif<br>
+<b>Water:</b> Low<br><br>
+
+<b>Overview:</b><br>
+Jowar is a drought-resistant crop suitable for dry regions. It is widely used as food and fodder.<br><br>
+
+<b>Advantages:</b><br>
+• Requires very little water<br>
+• Suitable for poor soil<br><br>
+
+<b>Precautions:</b><br>
+• Avoid excess moisture
+</div>
+</div>
+
+<!-- BAJRA -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="bajra.jpg">
+<h3>Bajra</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Cereal Crop<br>
+<b>Soil:</b> Sandy soil<br>
+<b>Season:</b> Kharif<br>
+<b>Water:</b> Very low<br><br>
+
+<b>Overview:</b><br>
+Bajra is highly drought-tolerant and grows in arid regions with low rainfall.<br><br>
+
+<b>Advantages:</b><br>
+• Low input cost<br>
+• Survives harsh climate<br><br>
+
+<b>Precautions:</b><br>
+• Not suitable for waterlogged soil
+</div>
+</div>
+
+<!-- MAIZE -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="maize.jpeg">
+<h3>Maize</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Cereal Crop<br>
+<b>Soil:</b> Well-drained loamy soil<br>
+<b>Season:</b> Kharif<br>
+<b>Temperature:</b> 20–30°C<br>
+<b>Yield:</b> 20–25 q/ha<br><br>
+
+<b>Overview:</b><br>
+Maize is a versatile crop used for food, fodder, and industrial purposes. It requires good sunlight and moderate rainfall.<br><br>
+
+<b>Growth Requirements:</b><br>
+• Needs proper spacing<br>
+• Requires moderate irrigation<br><br>
+
+<b>Uses:</b><br>
+• Food products<br>
+• Animal feed<br>
+• Industrial use<br><br>
+
+<b>Advantages:</b><br>
+• High yield crop<br>
+• Multi-purpose usage<br><br>
+
+<b>Precautions:</b><br>
+• Avoid water stagnation
+</div>
+</div>
+
+<!-- ONION -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="onion.webp">
+<h3>Onion</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Vegetable Crop<br>
+<b>Soil:</b> Sandy loam<br>
+<b>Season:</b> Rabi<br>
+<b>Water:</b> Moderate<br><br>
+
+<b>Overview:</b><br>
+Onion is a high-value crop with strong market demand. Proper irrigation and storage are important.<br><br>
+
+<b>Advantages:</b><br>
+• High profitability<br><br>
+
+<b>Precautions:</b><br>
+• Avoid overwatering
+</div>
+</div>
+
+<!-- TOMATO -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="tomato.jpeg">
+<h3>Tomato</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Vegetable Crop<br>
+<b>Soil:</b> Loamy<br>
+<b>Season:</b> All<br>
+<b>Water:</b> Moderate<br><br>
+
+<b>Overview:</b><br>
+Tomato is widely used in food and grows quickly with proper care.<br><br>
+
+<b>Advantages:</b><br>
+• Fast growth<br>
+• High demand<br><br>
+
+<b>Precautions:</b><br>
+• Pest control needed
+</div>
+</div>
+
+<!-- GROUNDNUT -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="groundnut.jpeg">
+<h3>Groundnut</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Oilseed Crop<br>
+<b>Soil:</b> Red soil<br>
+<b>Season:</b> Kharif<br><br>
+
+<b>Overview:</b><br>
+Groundnut is used for oil production and requires well-drained soil.<br><br>
+
+<b>Advantages:</b><br>
+• Good market value<br><br>
+
+<b>Precautions:</b><br>
+• Avoid heavy soil
+</div>
+</div>
+
+<!-- GRAM -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="gram.jpg">
+<h3>Gram</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Pulse Crop<br>
+<b>Season:</b> Rabi<br>
+<b>Water:</b> Low<br><br>
+
+<b>Overview:</b><br>
+Gram is a protein-rich pulse crop that requires less water.<br><br>
+
+<b>Advantages:</b><br>
+• Low irrigation needed<br>
+</div>
+</div>
+
+<!-- POTATO -->
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="potato.jpeg">
+<h3>Potato</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Vegetable Crop<br>
+<b>Soil:</b> Sandy loam<br>
+<b>Season:</b> Rabi<br>
+<b>Temp:</b> 15–20°C<br><br>
+
+<b>Overview:</b><br>
+Potato is widely consumed and requires cool climate for proper growth.<br><br>
+
+<b>Advantages:</b><br>
+• High yield<br><br>
+
+<b>Precautions:</b><br>
+• Avoid high temperature
+</div>
+</div>
+
+<!-- EXTRA CROPS -->
+
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="sugarcane.jpeg">
+<h3>Sugarcane</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Water:</b> High<br>
+Used for sugar production.<br>
+<b>Type:</b> Cash Crop<br>
+<b>Soil:</b> Deep fertile loamy soil (well-drained)<br>
+<b>Season:</b> Mainly Kharif (can be grown year-round in some regions)<br>
+<b>Temperature:</b> 20–35°C<br>
+<b>Rainfall:</b> 75–150 cm<br>
+<b>Sowing:</b> Jan–March (Spring) or June–July<br>
+<b>Harvest:</b> 10–18 months after sowing<br>
+<b>Water Requirement:</b> Very High<br>
+<b>Yield:</b> 60–100 tons/hectare<br><br>
+
+<b>Overview:</b><br>
+Sugarcane is a major commercial crop used for sugar production. It is a long-duration crop that requires a tropical to subtropical climate, abundant sunlight, and continuous water supply. It plays a vital role in the sugar and ethanol industry.<br><br>
+
+<b>Growth Requirements:</b><br>
+• Requires fertile soil rich in organic matter<br>
+• Needs regular irrigation throughout growth<br>
+• Performs best in warm and humid climate<br>
+• Requires proper spacing for healthy cane development<br><br>
+
+<b>Uses:</b><br>
+• Sugar production<br>
+• Jaggery (Gur) and molasses<br>
+• Ethanol and biofuel production<br>
+• By-products used in paper and bio-energy industries<br><br>
+
+<b>Advantages:</b><br>
+• High economic value crop<br>
+• Supports multiple industries<br>
+• Provides employment in rural areas<br><br>
+
+<b>Precautions:</b><br>
+• Avoid water stress during growth stages<br>
+• Protect from pests like borers and diseases like red rot<br>
+• Ensure proper drainage to prevent root damage
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="soyabean.jpeg">
+<h3>Soybean</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Oilseed Crop<br>
+<b>Soil:</b> Well-drained loamy or black soil<br>
+<b>Season:</b> Kharif<br>
+<b>Temperature:</b> 20–30°C<br>
+<b>Rainfall:</b> 60–100 cm<br>
+<b>Sowing:</b> June–July<br>
+<b>Harvest:</b> October–November<br>
+<b>Water Requirement:</b> Moderate<br>
+<b>Yield:</b> 20–25 q/ha<br><br>
+
+<b>Overview:</b><br>
+Soybean is an important oilseed and protein-rich crop. It is widely grown for edible oil production and is also used in various food and industrial products. It improves soil fertility by fixing nitrogen in the soil.<br><br>
+
+<b>Growth Requirements:</b><br>
+• Requires moderate rainfall and warm climate<br>
+• Needs well-drained soil to prevent root rot<br>
+• Sensitive to waterlogging<br>
+• Requires proper spacing and weed control<br><br>
+
+<b>Uses:</b><br>
+• Edible oil production<br>
+• Animal feed (soy meal)<br>
+• Food products like soy milk, tofu<br>
+• Industrial uses (paint, biodiesel)<br><br>
+
+<b>Advantages:</b><br>
+• High protein content<br>
+• Improves soil fertility (nitrogen fixation)<br>
+• Good market demand<br><br>
+
+<b>Precautions:</b><br>
+• Avoid excess water or flooding<br>
+• Control weeds in early growth stage<br>
+• Protect from pests like aphids and diseases
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<div class="card-header">
+<img src="mustard.png">
+<h3>Mustard</h3>
+<span class="arrow">▼</span>
+</div>
+<div class="details">
+<b>Type:</b> Oilseed Crop<br>
+<b>Soil:</b> Well-drained loamy to alluvial soil<br>
+<b>Season:</b> Rabi<br>
+<b>Temperature:</b> 10–25°C<br>
+<b>Rainfall:</b> 25–40 cm<br>
+<b>Sowing:</b> October–November<br>
+<b>Harvest:</b> February–March<br>
+<b>Water Requirement:</b> Low to Moderate<br>
+<b>Yield:</b> 10–15 q/ha<br><br>
+
+<b>Overview:</b><br>
+Mustard is an important oilseed crop widely grown in India for edible oil production. It grows best in cool climates and requires relatively less water compared to other crops. It is a short-duration crop and fits well in crop rotation systems.<br><br>
+
+<b>Growth Requirements:</b><br>
+• Requires cool climate during early growth stages<br>
+• Needs well-drained soil to avoid root damage<br>
+• Grows well with limited irrigation<br>
+• Requires proper sunlight for better seed formation<br><br>
+
+<b>Uses:</b><br>
+• Mustard oil (cooking oil)<br>
+• Used in pickles and spices<br>
+• Oil cake used as cattle feed<br>
+• Medicinal and industrial uses<br><br>
+
+<b>Advantages:</b><br>
+• Low water requirement<br>
+• Short duration crop (quick harvest)<br>
+• Good profitability with low input cost<br>
+• Suitable for crop rotation<br><br>
+
+<b>Precautions:</b><br>
+• Avoid waterlogging conditions<br>
+• Protect from pests like aphids<br>
+• Proper weed control in early stage<br>
+• Timely harvesting to prevent seed loss
+</div>
+</div>
+
+</div>
+
+<script>
+function toggle(selected) {
+    let cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+        if (card !== selected) {
+            card.classList.remove("active");
+        }
+    });
+    selected.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

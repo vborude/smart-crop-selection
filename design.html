@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>System Design - AgroSmart</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: url('sample3.jpg') no-repeat center center/cover;
+}
+
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 5%;
+}
+
+.logo{
+    font-size:28px;
+    color:orange;
+    font-weight:bold;
+}
+
+.menu a{
+    margin:0 15px;
+    text-decoration:none;
+    color: white;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#00ffcc;
+}
+
+/* MAIN */
+.main{
+    padding:40px;
+    text-align:center;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background: rgba(255,255,255,0.1);
+    border-radius:15px;
+    backdrop-filter: blur(10px);
+    padding:20px;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(0,255,200,0.5);
+}
+
+/* TITLE */
+.card h3{
+    margin-bottom:10px;
+    color:#00ffcc;
+}
+
+/* TEXT */
+.card p{
+    font-size:14px;
+    line-height:1.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">AgroSmart</div>
+
+    <div class="menu">
+        <a href="index.html">Home</a>
+       
+    </div>
+</div>
+
+<div class="main">
+
+<h1>⚙️ System Design</h1>
+
+<div class="grid">
+
+    <!-- INPUT -->
+    <div class="card">
+        <h3>User Input</h3>
+        <p>
+            The system collects user inputs such as soil type, temperature,
+            water availability, irrigation method, and fertilizer type.
+        </p>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="card">
+        <h3>Processing Logic</h3>
+        <p>
+            A rule-based scoring system evaluates each crop based on
+            matching conditions and assigns scores accordingly.
+        </p>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="card">
+        <h3>Output Result</h3>
+        <p>
+            The crop with the highest score is selected as the best crop,
+            along with other suitable alternatives.
+        </p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="card">
+        <h3>External Integration</h3>
+        <p>
+            The system connects users to government platforms for
+            weather updates, market prices, and agricultural advisory.
+        </p>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
